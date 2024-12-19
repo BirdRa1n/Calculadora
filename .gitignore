@@ -39,3 +39,4 @@ app-example
 yarn.lock
 package-lock.json
 .vercel
+/dist
