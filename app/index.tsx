@@ -70,7 +70,7 @@ const HomeScreen = () => {
         <View style={{ flex: 1, height: '100%' }}>
             <SafeAreaView>
                 {/* Tela de exibição da expressão e resultado */}
-                <View style={{ minHeight: '25%', backgroundColor: 'black', alignItems: 'flex-end', justifyContent: 'flex-end', padding: 10 }}>
+                <View style={{ minHeight: '25%', alignItems: 'flex-end', justifyContent: 'flex-end', padding: 10 }}>
                     <Text
                         numberOfLines={1}
                         ellipsizeMode="tail"
