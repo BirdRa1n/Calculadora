@@ -1,4 +1,4 @@
-import { Button, Text, TouchableOpacity, useColorScheme, View } from "react-native";
+import { Button, Dimensions, Text, TouchableOpacity, useColorScheme, View } from "react-native";
 import { evaluate } from "mathjs";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
@@ -66,16 +66,18 @@ const HomeScreen = () => {
         }
     };
 
+    const { height, width } = Dimensions.get('window');
+
     return (
         <View style={{ flex: 1, height: '100%' }}>
             <SafeAreaView>
                 {/* Tela de exibição da expressão e resultado */}
-                <View style={{ minHeight: '25%', alignItems: 'flex-end', justifyContent: 'flex-end', padding: 10 }}>
+                <View style={{ height: height / 4, alignItems: 'flex-end', justifyContent: 'flex-end', padding: 10 }}>
                     <Text
                         numberOfLines={1}
                         ellipsizeMode="tail"
-                        style={{ color: 'white', fontFamily: 'arial', fontSize: 80, marginRight: 0 }}>
-                        {numbers}
+                        style={{ color: colorScheme === 'dark' ? 'white' : 'black', fontFamily: 'arial', fontSize: 80, marginRight: 0 }}>
+                        {numbers || ""}
                     </Text>
                 </View>
 
@@ -95,7 +97,7 @@ const HomeScreen = () => {
                                     backgroundColor: '#6b21a8',
                                 }}
                                 onPress={() => { handleButtonPress(button) }}>
-                                <Text style={{ fontSize: 32, fontWeight: 'bold', color: colorScheme === 'dark' ? 'white' : 'black' }}>{button}</Text>
+                                <Text style={{ fontSize: 32, fontWeight: 'bold', color: 'white' }}>{button}</Text>
                             </TouchableOpacity>
                         ))}
                     </View>
